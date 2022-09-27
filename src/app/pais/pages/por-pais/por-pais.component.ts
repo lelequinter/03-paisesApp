@@ -16,9 +16,10 @@ export class PorPaisComponent {
   hayError: boolean = false;
   paises : Country[] = [];
 
-  buscar() {
+  buscar(termino: string) {
+    this.termino = termino;
     console.log(this.termino);
-    this.hayError = false
+    this.hayError = false;
 
     const observer = {
       next: (resp: any) => {console.log('Observer got a next value: ', resp)
