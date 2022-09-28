@@ -33,4 +33,10 @@ export class PorPaisComponent {
       .subscribe(observer)
   }
 
+  sugerencias(termino: string){
+    this.hayError = false;
+    //Todo: Crear sugenrencias
+
+  }
+
 }
