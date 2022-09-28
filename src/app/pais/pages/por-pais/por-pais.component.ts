@@ -18,13 +18,13 @@ export class PorPaisComponent {
 
   buscar(termino: string) {
     this.termino = termino;
-    console.log(this.termino);
+    // console.log(this.termino);
     this.hayError = false;
 
     const observer = {
-      next: (resp: any) => {console.log('Observer got a next value: ', resp)
+      next: (resp: any) => {//console.log('Observer got a next value: ', resp)
                             this.paises = resp},
-      error: (err: any) => {console.error('Observer got an error: ', err);
+      error: (err: any) => {//console.error('Observer got an error: ', err);
                             this.hayError = true;
                             this.paises = []},
     };
