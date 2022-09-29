@@ -21,9 +21,24 @@
       <h1>Información:</h1>
       <ul class="list-group">
         <li class="list-group-item">
-          <strong>Población:</strong> {{pais.population | number}}
+          <strong>Capital:</strong> {{ pais.capital }}
+        </li>
+        <li class="list-group-item">
+          <strong>Población:</strong> {{ pais.population | number }}
+        </li>
+        <li class="list-group-item">
+          <strong>Region:</strong> {{ pais.region }}
+        </li>
+        <li class="list-group-item">
+          <strong>SubRegion:</strong> {{ pais.subregion }}
+        </li>
+        <li class="list-group-item">
+          <strong>Código numérico:</strong> {{ pais.ccn3 }}
         </li>
       </ul>
     </div>
   </div>
+
+  <!-- <pre>{{pais | json}}</pre> -->
+
 </ng-template>
