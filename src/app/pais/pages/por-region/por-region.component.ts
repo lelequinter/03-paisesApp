@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Country } from '../../interfaces/pais.interface';
+import { PaisService } from '../../services/pais.service';
 
 @Component({
   selector: 'app-por-region',
@@ -12,12 +14,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PorRegionComponent implements OnInit {
 
-  regiones: string[] = ['EU', 'EFTA', 'CARICOM', 'PA', 'AU', 'USAN', 'EEU', 'AL', 'ASEAN', 'CAIS', 'CEFTA', 'NAFTA', 'SAARC'];
+  regiones: string[] = ['africa', 'americas', 'asia', 'europe', 'oceania'];
   regionActiva: string = '';
 
+  paises: Country[] = [];
 
-
-  constructor() { }
+  constructor(private paisService: PaisService) { }
 
   getClase(region: string): string {
     return (this.regionActiva === region)
@@ -30,6 +32,8 @@ export class PorRegionComponent implements OnInit {
 
   activarRegion(region: string) {
     this.regionActiva = region;
+
+    this.paisService.getPorRegion(region).subscribe(resp => this.paises = resp)
   }
 
 }
