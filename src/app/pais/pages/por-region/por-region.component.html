@@ -13,12 +13,10 @@
     <button
       *ngFor="let region of regiones"
       class="btn"
-      [ngClass]="[
-        regionActiva === region ? 'btn-primary' : 'btn-outline-primary'
-      ]"
+      [class]="getClase(region)"
       (click)="activarRegion(region)"
     >
-      {{ region }}
+      {{ region | titlecase }}
     </button>
   </div>
 </div>

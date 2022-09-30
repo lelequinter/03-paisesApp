@@ -12,10 +12,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PorRegionComponent implements OnInit {
 
-  regiones: string[] = ['africa', 'americas', 'asia', 'europe', 'oceania'];
+  regiones: string[] = ['EU', 'EFTA', 'CARICOM', 'PA', 'AU', 'USAN', 'EEU', 'AL', 'ASEAN', 'CAIS', 'CEFTA', 'NAFTA', 'SAARC'];
   regionActiva: string = '';
 
+
+
   constructor() { }
+
+  getClase(region: string): string {
+    return (this.regionActiva === region)
+      ? 'btn-primary'
+      : 'btn-outline-primary'
+  }
 
   ngOnInit(): void {
   }
